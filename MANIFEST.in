@@ -1,0 +1,53 @@
+# Shared ORM Package
+
+Version: 0.1.0
+
+## Build & Installation
+
+### Build the package
+```bash
+python -m build
+```
+
+### Install in development mode
+```bash
+pip install -e .
+```
+
+### Install with dev dependencies
+```bash
+pip install -e ".[dev]"
+```
+
+### Run tests
+```bash
+pytest
+```
+
+### Format code
+```bash
+black .
+ruff check --fix .
+```
+
+### Type checking
+```bash
+mypy shared_orm
+```
+
+## Release Process
+
+1. Update version in `pyproject.toml`
+2. Update `CHANGELOG.md`
+3. Build: `python -m build`
+4. Upload to PyPI: `twine upload dist/*`
+
+## Package Structure
+
+```
+shared_orm/
+├── __init__.py      # Package exports
+├── base.py          # Base class and metadata
+└── py.typed         # PEP 561 marker
+```
+
