@@ -1,13 +1,14 @@
 """SQLAlchemy ORM-Core.
 
 Wichtig:
+Important:
 - Hier gibt es bewusst KEINE Engine und KEINE Session.
-- Apps sind dafür verantwortlich, Engine/Session (und damit die DB-URL) zu bauen.
-- Alle Modelle, die in derselben DB erstellt/migriert werden sollen, erben von
-  dieser Base.
+- Engine and Session are deliberately omitted here
+- Apps using this module are responsible for creating and configuring Engine and Session themselves.
+- All SQLAlchemy Models that are intended to be created in a database must inherit from this Base class.
 
 Optional:
-- Naming Conventions helfen Alembic (Constraints werden stabil benannt).
+- Naming conventions are provided to help Alembic generate stable constraint names.
 """
 
 from sqlalchemy import MetaData
